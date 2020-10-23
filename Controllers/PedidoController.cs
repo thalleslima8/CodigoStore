@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using CodigoStore.Repositories;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,6 +9,13 @@ namespace CodigoStore.Controllers
 {
     public class PedidoController : Controller
     {
+
+        private readonly IProdutoRepository produtoRepository;
+
+        public PedidoController(IProdutoRepository produtoRepository)
+        {
+            this.produtoRepository = produtoRepository;
+        }
 
         public IActionResult Cadastro()
         {
@@ -21,7 +29,7 @@ namespace CodigoStore.Controllers
 
         public IActionResult Carrossel()
         {
-            return View();
+            return View(produtoRepository.GetProdutos());
         }
 
         public IActionResult Resumo()
