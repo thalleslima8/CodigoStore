@@ -1,0 +1,47 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30517.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodigoStore", "CodigoStore.csproj", "{25F30255-2D44-44A2-83BC-F3FA42D3D88D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Itens", "Itens", "{8B17F334-9BEE-48D2-8A2F-68EF57559488}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dados", "dados", "{CC77B2FC-1817-41B3-AC96-970B302CEEA4}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\..\..\..\Users\thall\AppData\Local\Temp\Rar$DRa0.046\ASPNETCore20-beeefabe42eee1d8e96d003ab3b9db5dca6a10d2\_Recursos\dados\livros.json = ..\..\..\..\..\..\Users\thall\AppData\Local\Temp\Rar$DRa0.046\ASPNETCore20-beeefabe42eee1d8e96d003ab3b9db5dca6a10d2\_Recursos\dados\livros.json
+		..\..\..\..\..\..\Users\thall\AppData\Local\Temp\Rar$DRa0.046\ASPNETCore20-beeefabe42eee1d8e96d003ab3b9db5dca6a10d2\_Recursos\dados\modelo.cs = ..\..\..\..\..\..\Users\thall\AppData\Local\Temp\Rar$DRa0.046\ASPNETCore20-beeefabe42eee1d8e96d003ab3b9db5dca6a10d2\_Recursos\dados\modelo.cs
+		..\..\..\..\..\..\Users\thall\AppData\Local\Temp\Rar$DRa0.046\ASPNETCore20-beeefabe42eee1d8e96d003ab3b9db5dca6a10d2\_Recursos\dados\modelo.png = ..\..\..\..\..\..\Users\thall\AppData\Local\Temp\Rar$DRa0.046\ASPNETCore20-beeefabe42eee1d8e96d003ab3b9db5dca6a10d2\_Recursos\dados\modelo.png
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "views-bootstrap", "views-bootstrap", "{0E6B3570-7B57-44F6-9371-D69F79C5CA46}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\..\..\..\Users\thall\AppData\Local\Temp\Rar$DRa0.860\ASPNETCore20-beeefabe42eee1d8e96d003ab3b9db5dca6a10d2\_Recursos\views-com-bootstrap\_Layout.cshtml = ..\..\..\..\..\..\Users\thall\AppData\Local\Temp\Rar$DRa0.860\ASPNETCore20-beeefabe42eee1d8e96d003ab3b9db5dca6a10d2\_Recursos\views-com-bootstrap\_Layout.cshtml
+		..\..\..\..\..\..\Users\thall\AppData\Local\Temp\Rar$DRa0.860\ASPNETCore20-beeefabe42eee1d8e96d003ab3b9db5dca6a10d2\_Recursos\views-com-bootstrap\Cadastro.cshtml = ..\..\..\..\..\..\Users\thall\AppData\Local\Temp\Rar$DRa0.860\ASPNETCore20-beeefabe42eee1d8e96d003ab3b9db5dca6a10d2\_Recursos\views-com-bootstrap\Cadastro.cshtml
+		..\..\..\..\..\..\Users\thall\AppData\Local\Temp\Rar$DRa0.860\ASPNETCore20-beeefabe42eee1d8e96d003ab3b9db5dca6a10d2\_Recursos\views-com-bootstrap\Carrinho.cshtml = ..\..\..\..\..\..\Users\thall\AppData\Local\Temp\Rar$DRa0.860\ASPNETCore20-beeefabe42eee1d8e96d003ab3b9db5dca6a10d2\_Recursos\views-com-bootstrap\Carrinho.cshtml
+		..\..\..\..\..\..\Users\thall\AppData\Local\Temp\Rar$DRa0.860\ASPNETCore20-beeefabe42eee1d8e96d003ab3b9db5dca6a10d2\_Recursos\views-com-bootstrap\Carrossel.cshtml = ..\..\..\..\..\..\Users\thall\AppData\Local\Temp\Rar$DRa0.860\ASPNETCore20-beeefabe42eee1d8e96d003ab3b9db5dca6a10d2\_Recursos\views-com-bootstrap\Carrossel.cshtml
+		..\..\..\..\..\..\Users\thall\AppData\Local\Temp\Rar$DRa0.860\ASPNETCore20-beeefabe42eee1d8e96d003ab3b9db5dca6a10d2\_Recursos\views-com-bootstrap\Resumo.cshtml = ..\..\..\..\..\..\Users\thall\AppData\Local\Temp\Rar$DRa0.860\ASPNETCore20-beeefabe42eee1d8e96d003ab3b9db5dca6a10d2\_Recursos\views-com-bootstrap\Resumo.cshtml
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{25F30255-2D44-44A2-83BC-F3FA42D3D88D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25F30255-2D44-44A2-83BC-F3FA42D3D88D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25F30255-2D44-44A2-83BC-F3FA42D3D88D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25F30255-2D44-44A2-83BC-F3FA42D3D88D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{CC77B2FC-1817-41B3-AC96-970B302CEEA4} = {8B17F334-9BEE-48D2-8A2F-68EF57559488}
+		{0E6B3570-7B57-44F6-9371-D69F79C5CA46} = {8B17F334-9BEE-48D2-8A2F-68EF57559488}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {07C6E709-8DAD-4E6E-A181-B89FA5A69A75}
+	EndGlobalSection
+EndGlobal
