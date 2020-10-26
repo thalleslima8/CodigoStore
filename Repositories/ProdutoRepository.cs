@@ -1,5 +1,6 @@
 ﻿using CasaDoCodigo.Models;
 using CodigoStore.Context;
+using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -9,25 +10,25 @@ using System.Threading.Tasks;
 
 namespace CodigoStore.Repositories
 {
-    public class ProdutoRepository : IProdutoRepository
+    public class ProdutoRepository : BaseRepository<Produto>, IProdutoRepository 
     {
-        private readonly ApplicationContext contexto;
-
-        public ProdutoRepository(ApplicationContext contexto)
+        public ProdutoRepository(ApplicationContext contexto) : base(contexto)
         {
-            this.contexto = contexto;
         }
 
         public IList<Produto> GetProdutos()
         {
-            return contexto.Set<Produto>().ToList();
+            return dbSets.ToList();
         }
 
         public void SaveProdutos(List<Livro> livros)
         {
             foreach (var livro in livros)
             {
-                contexto.Set<Produto>().Add(new Produto(livro.Codigo, livro.Nome, livro.Preco));
+                if (!dbSets.Where(p => p.Codigo == livro.Codigo).Any())
+                {
+                    dbSets.Add(new Produto(livro.Codigo, livro.Nome, livro.Preco));
+                }
             }
 
             contexto.SaveChanges();
