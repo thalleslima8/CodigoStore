@@ -1,8 +1,10 @@
-﻿<h3>Catálogo</h3>
+﻿@model List<CasaDoCodigo.Models.Produto>
+
+<h3>Catálogo</h3>
 
 @foreach (var produto in Model)
 {
-    <div>@produto.</div>
+    <div>@produto.Nome</div>
 }
 
 <div id="my-carousel" class="carousel slide" data-ride="carousel">
