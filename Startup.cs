@@ -37,6 +37,8 @@ namespace CodigoStore
             string connectionString = Configuration.GetConnectionString("Default");
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddDistributedMemoryCache();
+            services.AddSession();
             services.AddApplicationInsightsTelemetry();
             services.AddDbContext<ApplicationContext>(options =>
                 options.UseSqlServer(connectionString)
@@ -64,6 +66,7 @@ namespace CodigoStore
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+            app.UseSession();
             app.UseCookiePolicy();
 
             app.UseMvc(routes =>
