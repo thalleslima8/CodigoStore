@@ -1,6 +1,10 @@
-﻿namespace CodigoStore
+﻿using CasaDoCodigo.Models;
+
+namespace CodigoStore
 {
-    internal interface IPedidoRepository
+    public interface IPedidoRepository
     {
+        Pedido GetPedido();
+        void AddItem(string codigo);
     }
 }
