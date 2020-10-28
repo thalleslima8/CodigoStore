@@ -45,6 +45,11 @@ namespace CodigoStore.Controllers
             return View(pedido);
         }
 
+        [HttpPost]
+        //[ValidateAntiForgeryToken]
+        public void UpdateQuantidade([FromBody]ItemPedido itemPedido)
+        {
 
+        }
     }
 }
