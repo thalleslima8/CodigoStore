@@ -51,17 +51,11 @@ namespace CodigoStore.Controllers
 
         [HttpPost]
         //[ValidateAntiForgeryToken]
-        public void UpdateQuantidade([FromBody]ItemPedidoIDDto item)
+        public void UpdateQuantidade([FromBody]ItemPedidoIdDto itemAjaxRequest)
         {
-            var itemPedido = itemPedidoRepository.GetPedido(item.Id);
-            itemPedido.AtualizaQuantidade(item.Qtd);
+            var itemPedido = itemPedidoRepository.GetPedido(itemAjaxRequest.Id);
+            itemPedido.AtualizaQuantidade(itemAjaxRequest.Qtd);
             itemPedidoRepository.UpdateQuantidade(itemPedido);
         }
-    }
-
-    public class ItemPedidoIDDto
-    {
-        public int Id { get; set; }
-        public int Qtd { get; set; }
     }
 }
