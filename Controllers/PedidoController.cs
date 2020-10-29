@@ -1,4 +1,5 @@
 ﻿using CasaDoCodigo.Models;
+using CodigoStore.Models.ViewModels;
 using CodigoStore.Repositories;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -34,8 +35,11 @@ namespace CodigoStore.Controllers
             {
                 pedidoRepository.AddItem(codigo);
             }
-            Pedido pedido = pedidoRepository.GetPedido(); 
-            return View(pedido.Itens);
+            //Pedido pedido = pedidoRepository.GetPedido(); 
+            List<ItemPedido> itens = pedidoRepository.GetPedido().Itens;
+            CarrinhoViewModel carrinhoViewModel = new CarrinhoViewModel(itens);
+
+            return base.View(carrinhoViewModel);
         }
 
         public IActionResult Carrossel()
