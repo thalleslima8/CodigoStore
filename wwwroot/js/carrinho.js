@@ -41,7 +41,7 @@ class Carrinho {
             linhaDoItem.find('input').val(itemPedido.quantidade);
             linhaDoItem.find('[subtotal]').html((itemPedido.subtotal).duasCasas());
 
-            //debugger;
+            debugger;
             
         });
     }
