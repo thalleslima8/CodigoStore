@@ -1,4 +1,5 @@
 ﻿using CasaDoCodigo.Models;
+using CodigoStore.Models;
 
 namespace CodigoStore
 {
@@ -6,5 +7,6 @@ namespace CodigoStore
     {
         Pedido GetPedido();
         void AddItem(string codigo);
+        UpdateQuantidadeResponse UpdateQuantidade(ItemPedido itemPedido);
     }
 }

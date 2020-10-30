@@ -1,4 +1,5 @@
 ﻿using CasaDoCodigo.Models;
+using CodigoStore.Models;
 using CodigoStore.Models.ViewModels;
 using CodigoStore.Repositories;
 using Microsoft.AspNetCore.Mvc;
@@ -55,11 +56,15 @@ namespace CodigoStore.Controllers
 
         [HttpPost]
         //[ValidateAntiForgeryToken]
-        public void UpdateQuantidade([FromBody]ItemPedidoIdDto itemAjaxRequest)
+        public UpdateQuantidadeResponse UpdateQuantidade([FromBody]ItemPedidoIdDto itemAjaxRequest)
         {
-            var itemPedido = itemPedidoRepository.GetPedido(itemAjaxRequest.Id);
+            var pedidoAtual = pedidoRepository.GetPedido();
+            var itemPedido = itemPedidoRepository.GetItemPedido(itemAjaxRequest.Id);
+            
+            
             itemPedido.AtualizaQuantidade(itemAjaxRequest.Qtd);
-            itemPedidoRepository.UpdateQuantidade(itemPedido);
-        }
+            return pedidoRepository.UpdateQuantidade(itemPedido);
+       }
+
     }
 }

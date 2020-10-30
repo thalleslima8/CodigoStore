@@ -78,6 +78,8 @@ namespace CasaDoCodigo.Models
         [DataMember]
         [Required]
         public decimal PrecoUnitario { get; private set; }
+        [DataMember]
+        public decimal Subtotal => Quantidade * PrecoUnitario;
 
         public ItemPedido()
         {
@@ -96,6 +98,11 @@ namespace CasaDoCodigo.Models
         {
             Quantidade = quantidade;
         }
+
+        internal void AtualizaProduto(Produto produto)
+        {
+            Produto = produto;
+        }
     }
 
     public class Pedido : BaseModel
@@ -108,6 +115,11 @@ namespace CasaDoCodigo.Models
         public Pedido(Cadastro cadastro)
         {
             Cadastro = cadastro;
+        }
+
+        internal void AtualizaQuantidade(int quantidade)
+        {
+            throw new NotImplementedException();
         }
 
         public List<ItemPedido> Itens { get; private set; } = new List<ItemPedido>();

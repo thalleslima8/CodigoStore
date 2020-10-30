@@ -1,5 +1,7 @@
 ﻿using CasaDoCodigo.Models;
 using CodigoStore.Context;
+using CodigoStore.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,8 +12,7 @@ namespace CodigoStore.Repositories
 
     public interface IItemPedidoRepository
     {
-        void UpdateQuantidade(ItemPedido itemPedido);
-        ItemPedido GetPedido(int Id);
+        ItemPedido GetItemPedido(int ItemPedidoId);
     }
     public class ItemPedidoRepository : BaseRepository<ItemPedido>, IItemPedidoRepository
     {
@@ -19,23 +20,12 @@ namespace CodigoStore.Repositories
         {
         }
 
-        public ItemPedido GetPedido(int Id)
+        public ItemPedido GetItemPedido(int Id)
         {
-            return dbSet.Where(ip => ip.Id == Id).SingleOrDefault();
-        }
-
-        public void UpdateQuantidade(ItemPedido itemPedido)
-        {
-            var itemPedidoDB = dbSet
-                                .Where(ip => ip.Id == itemPedido.Id)
-                                   .SingleOrDefault();
-
-            if (itemPedidoDB != null)
-            {
-                itemPedidoDB.AtualizaQuantidade(itemPedido.Quantidade);
-                contexto.SaveChanges();
-            }
+            var Item =  dbSet.Where(ip => ip.Id == Id).FirstOrDefault();
             
+            return Item;
         }
+
     }
 }
