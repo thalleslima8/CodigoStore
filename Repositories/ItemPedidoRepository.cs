@@ -13,6 +13,7 @@ namespace CodigoStore.Repositories
     public interface IItemPedidoRepository
     {
         ItemPedido GetItemPedido(int ItemPedidoId);
+        void RemoveItemPedidoId(int itemPedidoId);
     }
     public class ItemPedidoRepository : BaseRepository<ItemPedido>, IItemPedidoRepository
     {
@@ -27,5 +28,9 @@ namespace CodigoStore.Repositories
             return Item;
         }
 
+        public void RemoveItemPedidoId(int itemPedidoId)
+        {
+            dbSet.Remove(GetItemPedido(itemPedidoId));
+        }
     }
 }
