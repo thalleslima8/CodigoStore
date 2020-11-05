@@ -50,7 +50,7 @@ class Carrinho {
                 linhaDoItem.remove();
             }
 
-            debugger;
+            
             
         });
     }

@@ -27,6 +27,16 @@ namespace CodigoStore.Controllers
 
         public IActionResult Cadastro()
         {
+            var pedido = pedidoRepository.GetPedido();
+            
+            if(pedido == null)
+            {
+                return RedirectToAction("Carrossel");
+            }
+
+
+
+
             return View();
         }
 
@@ -48,9 +58,10 @@ namespace CodigoStore.Controllers
             return View(produtoRepository.GetProdutos());
         }
 
-        public IActionResult Resumo()
+        [HttpPost]
+        public IActionResult Resumo(Cadastro cadastro)
         {
-            Pedido pedido = pedidoRepository.GetPedido();
+            var pedido = pedidoRepository.GetPedido();
             return View(pedido);
         }
 
