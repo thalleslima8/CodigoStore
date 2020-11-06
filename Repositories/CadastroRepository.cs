@@ -19,7 +19,15 @@ namespace CodigoStore.Repositories
 
         public Cadastro Update(int cadastroId, Cadastro novoCadastro)
         {
-            throw new NotImplementedException();
+            var cadastroDB = dbSet.Where(c => c.Id == cadastroId)
+                .SingleOrDefault();
+
+            if (cadastroDB == null) throw new ArgumentException("Cadastro Não Encontrado!");
+
+            cadastroDB.Update(novoCadastro);
+            contexto.SaveChanges();
+
+            return cadastroDB;
         }
     }
 }

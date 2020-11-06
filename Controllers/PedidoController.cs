@@ -59,14 +59,19 @@ namespace CodigoStore.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public IActionResult Resumo(Cadastro cadastro)
         {
-            var pedido = pedidoRepository.GetPedido();
-            return View(pedido);
+            if (ModelState.IsValid)
+            {
+                return View(pedidoRepository.UpdateCadastro(cadastro));
+            }
+
+            return RedirectToAction("Cadastro");
         }
 
         [HttpPost]
-        //[ValidateAntiForgeryToken]
+        [ValidateAntiForgeryToken]
         public UpdateQuantidadeResponse UpdateQuantidade([FromBody]ItemPedidoIdDto itemAjaxRequest)
         {
             var pedidoAtual = pedidoRepository.GetPedido();

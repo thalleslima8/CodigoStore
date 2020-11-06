@@ -63,6 +63,19 @@ namespace CasaDoCodigo.Models
         public string UF { get; set; } = "";
         [Required(ErrorMessage = "CEP é obrigatório")]
         public string CEP { get; set; } = "";
+
+        internal void Update(Cadastro novoCadastro)
+        {
+            this.Nome = novoCadastro.Nome;
+            this.Email = novoCadastro.Email;
+            this.Telefone = novoCadastro.Telefone;
+            this.Endereco = novoCadastro.Endereco;
+            this.Complemento = novoCadastro.Complemento;
+            this.Bairro = novoCadastro.Bairro;
+            this.Municipio = novoCadastro.Municipio;
+            this.UF = novoCadastro.UF;
+            this.CEP = novoCadastro.CEP;
+        }
     }
 
     [DataContract]
@@ -127,5 +140,9 @@ namespace CasaDoCodigo.Models
         public List<ItemPedido> Itens { get; private set; } = new List<ItemPedido>();
         [Required]
         public virtual Cadastro Cadastro { get; private set; }
+        public decimal Total()
+        {
+            return Itens.Sum(p => p.Subtotal);
+        }
     }
 }
