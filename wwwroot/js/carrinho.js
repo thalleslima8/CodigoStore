@@ -1,13 +1,13 @@
 ﻿
 class Carrinho {
-    clickIncremento(btn) {
-        let data = this.getData(btn);
+    clickIncremento(button) {
+        let data = this.getData(button);
         data.Qtd++;
         this.postQuantidade(data);
     }
 
-    clickDecremento(btn){
-        let data = this.getData(btn);
+    clickDecremento(button){
+        let data = this.getData(button);
         data.Qtd--;
         this.postQuantidade(data);
     }
@@ -54,9 +54,6 @@ class Carrinho {
             if (itemPedido.quantidade == 0) {
                 linhaDoItem.remove();
             }
-
-            
-            
         });
     }
 }
